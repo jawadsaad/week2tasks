@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    
+    <body>
+    
+        
+    <!-- span id = demo that allows JS access -->
+        <span id="demo"></span>
+        <form>
+            <input type="text" placeholder="Please enter a number" id="input1">
+            <input type="text" placeholder="Please enter a number" id="input2">
+            
+
+            
+        </form>
+        
+        <div>
+            <button id="button1"> Perform Calculations </button>
+        </div>
+        
+        <div id="result"> </div>
+        
+        <script>
+//            window.alert("testing");
+//            document.getElementById("demo").innerHTML = "HELLO";
+//            console.log(demo);
+            
+//            var myAddress = {
+//                Street: 'minories',
+//                Number: 104,
+//                building: {
+//                    floor: 4,
+//                    security: 'fob'
+//                }
+//            };
+//            
+//            console.log(myAddress);
+            
+            //declares a variable listening for button1
+            var event1 = document.getElementById('button1');
+            
+            event1.addEventListener('click', performCalcs, false);
+            
+            function performCalcs() {
+                //2 variables that hold the numbers that have been entered by the user
+                var userinput1 = document.getElementById('input1').value;
+                var userinput2 = document.getElementById('input2').value;
+//                var userinput3 = document.getElementById('input3').value;
+                
+                //parsing the two variables from strings to integers
+                var num1 = parseInt(userinput1);
+                var num2 = parseInt(userinput2);
+//                var num3 = parseInt(userinput3);
+                
+//                var calc1 = (num1 + num2) * num3;
+//                var calc2 = num1 + num2 + num3;
+//                var diff = calc1 - calc2;
+                var invalid = "Invalid input";
+                
+               
+                if(isNaN(num1) && isNaN(num2)) {
+                    document.getElementById('result').innerHTML = "Both inputs are invalid. Please enter numbers.";
+                } else if (isNaN(num1)) {
+                    document.getElementById('result').innerHTML = userinput1 + " is not a number.";
+                } else if (isNaN(num2)) {
+                    document.getElementById('result').innerHTML = userinput2 + " is not a number.";
+                } else if (num1 > 10 && num2 > 10) {
+                    document.getElementById('result').innerHTML = "Both numbers are greater than 10.";
+                } else if (num1 > 10 && num2 < 10) {
+                    document.getElementById('result').innerHTML = num1 + " is greater than 10 and " + num2 + " is less than 10.";
+                } else if (num1 < 10 && num2 > 10) {
+                    document.getElementById('result').innerHTML = num1 + " is less than 10 and " + num2 + " is greater than 10.";
+                } else if (num1 === 10 && num2 < 10) {
+                    document.getElementById('result').innerHTML = num1 + " is equal to 10 and " + num2 + " is less than 10.";
+                } else if (num1 === 10 && num2 > 10) {
+                    document.getElementById('result').innerHTML = num1 + " is equal to 10 and " + num2 + " is greater than 10.";
+                } else if (num1 < 10 && num2 === 10) {
+                    document.getElementById('result').innerHTML = num1 + " is less than 10 and " + num2 + " is equal to 10.";
+                } else if (num1 > 10 && num2 === 10) {
+                    document.getElementById('result').innerHTML = num1 + " is greater than 10 and " + num2 + " is equal to 10.";
+                } else if (num1 === 10 && num2 === 10) {
+                    document.getElementById('result').innerHTML = "Both numbers are equal to 10.";
+                } else {
+                    document.getElementById('result').innerHTML = "Both numbers are less than 10.";
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>
