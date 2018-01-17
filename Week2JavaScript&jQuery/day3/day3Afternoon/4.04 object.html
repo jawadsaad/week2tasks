@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Object</p>
+<p id="demo"></p>
+<input id="playerinput" />
+<input type="button" value="add players" onclick="footballClub.addPlayers(parseInt(playerinput.value))" />
+<p id="playersadded"></p>
+<input type="button" value="view updated club info" onclick="footballClub.viewUpdated()" />
+<p id="new"></p>
+<input type="button" value="view most valuable players" onclick="footballClub.viewMVPs()" />
+<p id="mvps"></p>
+<script>
+    
+    var footballClub = {
+        name: 'Arsenal',
+        manager: 'Arsene Wenger',
+        stadium: 'The Emirates Stadium',
+        players: 35,
+        
+        addPlayers: function(n) {
+            if(isNaN(n)) {
+                document.getElementById('playersadded').innerHTML = "Please enter a number";
+            } else { 
+                this.players += n;
+                document.getElementById('playersadded').innerHTML = footballClub.players;
+            }
+        },
+        
+        viewUpdated: function() {
+            document.getElementById('new').innerHTML = "Club name: " + footballClub.name + "<br />" + "Manager name: " + footballClub.manager + "<br />" + "Stadium name: " + footballClub.stadium + "<br />" + "Number of players: " + footballClub.players;
+        },
+        
+        viewMVPs: function () {
+            document.getElementById('mvps').innerHTML = "Object name: " + "mvPlayers" + "<br />" + "MVP 1: " + this.mvPlayers.mvp1 + "<br />" + "MVP 2: " + this.mvPlayers.mvp2;
+        },
+        
+        mvPlayers: {
+            mvp1: 'Alexis Sanchez',
+            mvp2: 'Mesut Ozil'
+        }
+    };
+    
+    document.getElementById('demo').innerHTML = "Club name: " + footballClub.name + "<br />" + "Manager name: " + footballClub.manager + "<br />" + "Stadium name: " + footballClub.stadium + "<br />" + "Number of players: " + footballClub.players;
+    
+    //document.getElementById('demo').innerHTML = footballClub;
+    
+    //footballClub.addPlayers(13)
+    console.log(footballClub);
+    
+    
+</script>
+</body>
+</html>
+

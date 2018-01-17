@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+
+<script>
+    function footballClub(name, manager, stadium) {
+        this.name = name;
+        this.manager = manager;
+        this.stadium = stadium;
+    }
+    
+    var arsenal = new footballClub("Arsenal", "Arsene Wenger", "The Emirates Stadium");
+    var manUnited = new footballClub("Manchester United", "Jose Mourinho", "Old Trafford");
+    
+    
+    document.getElementById('demo').innerHTML = "This holds an " + "<strong>" + typeof(arsenal) + "</strong>" + ".<br /> It contains  the following properties: <br />" + arsenal.name + "<br />" + arsenal.manager + "<br />" + arsenal.stadium + "<br />";
+    
+    document.getElementById('demo2').innerHTML = "This holds an " + "<strong>" + typeof(manUnited) + "</strong>" + ".<br /> It contains  the following properties: <br />" + manUnited.name + "<br />" + manUnited.manager + "<br />" + manUnited.stadium + "<br />";
+
+</script>
+
+</body>
+</html>
