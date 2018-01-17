@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Javascript add and display 10 members of an array</title>
+
+</head>
+<body>
+<h1>Javascript</h1>
+<h2>Display 10 members of an array using for loop</h2>
+<button type="button" onclick="displayArray()">Display full array</button>
+<button type="button" onclick="looparray()">Display member from country array</button>
+<p id="myarray"></p>
+<p id="myarray1"></p>
+
+<script>
+    
+    var arr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen"];
+    
+    function displayArray() {
+        document.getElementById('myarray').innerHTML = "[" + arr + "]";
+    }
+    
+    function looparray() {
+        var count = '';
+        
+        for(var i = 0; i < 10; i++) {
+            count += "Index " + "<strong>" + i +"</strong>" + ": " + arr[i] + "<br />";
+        }
+        
+        document.getElementById('myarray1').innerHTML = count;
+    }
+
+</script>
+
+
+</body>
+</html>

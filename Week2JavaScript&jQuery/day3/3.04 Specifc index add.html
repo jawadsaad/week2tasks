@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title>Javascript add to an array at a specific index point in the array</title>
+
+</head>
+<body>
+<h1>Javascript</h1>
+<input id="countryinput" />
+<input type="button" value="Display current array" onclick="displayArray()" />
+<input type="button" value="Push member to array at 5th Index" onclick="addAtIndex(countryinput.value)" />
+
+    
+
+<p id="myarray"></p>
+<br>
+<p id="myarray2"></p>
+
+<script>
+// create array
+var myCountryArray = ["England", "France", "Italy", "Mexico", "Poland", "Russia", "China", "Greece", "Egypt", "India"];
+    
+    function displayArray() {
+        document.getElementById('myarray').innerHTML = "[" + myCountryArray + "]";
+    }
+    
+    function addAtIndex(a) {
+        myCountryArray.splice(5, 0, a);
+        document.getElementById('myarray2').innerHTML = "[" + myCountryArray + "]";
+    }
+    
+</script>
+
+
+</body>
+</html>
